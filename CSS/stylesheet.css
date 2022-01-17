@@ -1,0 +1,382 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #FFF;
+  color: #000;
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  margin: 0;
+  cursor: context-menu;
+  overflow: hidden;
+  display: inline-grid;
+}
+
+p{margin: 10px 0;}
+
+.break{height: 20px;}
+
+.main-container{
+  width: 100vw;
+  height: 100vh;
+}
+
+.full-container{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+#left-nav{
+  position: fixed;
+  left: 0;
+  width: 20px;
+  height: 100%;
+  cursor: pointer;
+  background-color: #C0C0C0;
+  color: #FFFFFF;
+  padding-top: 50vh;
+  z-index: 1;
+}
+
+#left-nav:hover{
+  background-color: #808080;
+  color: #404040;
+}
+
+#right-nav{
+  position: fixed;
+  right: 0;
+  width: 20px;
+  height: 100%;
+  cursor: pointer;
+  background-color: #C0C0C0;
+  color: #FFFFFF;
+  padding-top: 50vh;
+  z-index: 1;
+}
+
+#right-nav:hover{
+  background-color: #808080;
+  color: #404040;
+}
+
+.center-container{
+  height: 100%;
+  width: 100%;
+}
+
+#game-grid {
+  margin: auto;
+  margin-top: 20px;
+  border-collapse: collapse;
+  font-size: 1em;
+}
+
+#game-grid table, #game-grid td, #game-grid th {border: 1px solid black;}
+
+#game-grid td, #game-grid th{
+  width: 12.5%;
+  height: 12.5%;
+  vertical-align: middle;
+  cursor: context-menu;
+}
+
+#game-grid td{cursor: pointer;}
+
+#game-grid td.selected{
+  cursor: not-allowed;
+  color: #FFFFFF;
+  background-color: #A0A0A0;
+}
+
+#game-grid td.selected.item{
+  cursor: not-allowed;
+  color: #FFFFFF;
+  background-color: #404040;
+}
+
+.right-container{
+  position: fixed;
+  top: 0;
+  right: -100%;
+  height: 100vh;
+  border-left: 1px solid black;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  display: inline-block;
+  animation: linear 1;
+  animation-name: moveRight;
+  animation-duration: 3s;
+  animation-direction: reverse;
+}
+
+.right-container.show{
+  right: 0;
+  animation: linear 1;
+  animation-name: moveRight;
+  animation-duration: 3s;
+}
+
+@keyframes moveLeft {
+  0% { left: -100%; }
+  50% { left: -50%; }
+  100% { left: 0; }
+}
+
+@keyframes moveRight {
+  0% { right: -100%; }
+  50% { right: -50%; }
+  100% { right: 0; }
+}
+
+.top-panel{
+  height: 80px;
+  padding: 10px;
+  border-bottom: 1px solid black;
+  overflow: hidden;
+  cursor: context-menu;
+}
+
+
+
+
+
+.flexContainer{
+  width: 100vw;
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.flexContainerRow{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: stretch;
+}
+
+.flexContainerCol{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+
+.right-panel{
+  height: 20px;
+  padding: 10px;
+  border-bottom: 1px solid black;
+  overflow: hidden;
+  cursor: context-menu;
+}
+
+.right-panel h1{
+  margin-bottom: 20px;
+}
+
+.right-panel.show{
+  height: calc(100vh - 204px);
+}
+
+.bottom-panel{
+  height: calc(100vh - 256px);
+  padding: 10px;
+}
+
+.scroll-pane{
+  height: 40px;
+  margin: 0 20px;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  white-space: nowrap;
+}
+
+#table-grid {
+  margin: auto;
+  margin-top: 20px;
+  border-collapse: collapse;
+  width: 440px;
+  font-size: 1em;
+}
+
+#mini-grid {
+  margin: auto;
+  border-collapse: collapse;
+  width: 160px;
+  font-size: 1em;
+}
+
+#mini-grid table, #mini-grid td, #mini-grid th {border: 1px solid grey;}
+
+#mini-grid td, #mini-grid th{
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  cursor: context-menu;
+}
+
+#mini-grid td.selected{
+  cursor: not-allowed;
+  color: #FFFFFF;
+  background-color: #A0A0A0;
+}
+
+#mini-grid td:not(.selected):hover{
+  background-color: #202020;
+}
+
+.button{
+  cursor: pointer;
+  display: inline;
+}
+
+#game-ctrl{display: none;}
+
+#btn-box{display: none;}
+
+#game-total{margin: 20px;}
+
+#item-list table {
+  margin: auto;
+  margin-top: 20px;
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.5em;
+}
+
+#item-list table {border: 0 #000 solid;}
+
+#item-list td, #item-list th{
+  vertical-align: middle;
+  cursor: context-menu;
+  height: 20px;
+  width: auto;
+}
+
+#game-box{
+  display: none;
+  margin: auto;
+  margin-top: 20px;
+  border: 1px solid #000;
+  box-sizing: border-box;
+}
+
+.top-pad100{padding-top: 100px;}
+.top-pad50{padding-top: 50px;}
+
+#game-box h1{margin: 20px;}
+#game-box p{margin: 20px;}
+#game-box button{margin: 20px;}
+
+.blank-hide.hide{display: none;}
+
+ol {
+  margin: 30px;
+  padding: 10px;
+  list-style-type: upper-roman;
+  list-style-position: outside;
+  text-align: left;
+  cursor: context-menu;
+}
+
+ul {
+  list-style-type: circle;
+  list-style-position: outside;
+  padding-left: 30px;
+}
+
+li{
+  margin: 10px 0;
+}
+
+.ref-text{
+  font-size: 12px;
+  width: 100%
+}
+
+.list-container{
+  width: 100%;
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+::-webkit-scrollbar-track{
+	border-radius: 10px;
+	background-color: var(--scroll-background);
+}
+
+::-webkit-scrollbar{
+	width: 10px;
+  height: 10px;
+	background-color: #FFFFFF;
+}
+
+::-webkit-scrollbar-thumb{
+	border-radius: 10px;
+	background-color: #C0C0C0;
+}
+
+::-webkit-scrollbar-thumb:vertical:hover {
+    background-color: #808080;
+}
+
+::-webkit-scrollbar-thumb:horizontal:hover {
+    background-color: #808080;
+}
+
+#mainFooter .copyright{
+	position: fixed;
+	font-size: 10px;
+	bottom: 0px;
+	left: 20px;
+  margin: 5px;
+}
+
+.hover-box{
+  width: 100%;
+  height: 100%;
+  padding-top: 50%;
+}
+
+.hover-box .hover-txt {
+  visibility: hidden;
+  width: 250px;
+  background-color: #808080;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  pointer-events:none;
+  -webkit-transform: translate(10px,-6px);
+  -moz-transform: translate(10px,-6px);
+  -ms-transform: translate(10px,-6px);
+   transform: translate(10px,-6px);
+}
+
+.hover-txt.left {
+  -webkit-transform: translate(-280px,-6px);
+  -moz-transform: translate(-280px,-6px);
+  -ms-transform: translate(-280px,-6px);
+   transform: translate(-280px,-6px);
+}
+
+.hover-txt.under {
+  -webkit-transform: translate(-140px,25px);
+  -moz-transform: translate(-140px,25px);
+  -ms-transform: translate(-140px,25px);
+   transform: translate(-140px,25px);
+}
+
+.hover-box:hover .hover-txt {
+  visibility: visible;
+}

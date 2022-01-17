@@ -1,0 +1,39 @@
+<div class="top-pad100">
+  <div id="input-row">
+    <h1><u>You have been ATTACKED!</u></h1>
+    <h2>Luckily you have <span id="item-name"></span> to protect yourself.</h2>
+    <p>What would you like to use...</p>
+    <div id="btn-row"></div>
+  </div>
+  <div>
+    <button type="button" name="button" id="close-btn">Close</button>
+  </div>
+</div>
+<script type="text/javascript">
+  if(sessionStorage.getItem("blockItem") !== null &&
+    sessionStorage.getItem("mirrorItem") !== null){
+      $("#item-name").html("a shield and<br>a mirror");
+      $("#btn-row").html(`
+        <button type="button" name="button" onclick="subPoints('B')">&#128737;</button>
+        <button type="button" name="button" onclick="subPoints('M')">&#128269;</button>
+        <button type="button" name="button" onclick="gotoSub()">NONE</button>
+      `);
+  }else if(sessionStorage.getItem("blockItem") !== null){
+      $("#item-name").html("a shield");
+      $("#btn-row").html(`
+        <button type="button" name="button" onclick="subPoints('B')">&#128737;</button>
+        <button type="button" name="button" onclick="gotoSub()">NONE</button>
+      `);
+  }else if(sessionStorage.getItem("mirrorItem") !== null){
+      $("#item-name").html("a mirror");
+      $("#btn-row").html(`
+        <button type="button" name="button" onclick="subPoints('M')">&#128269;</button>
+        <button type="button" name="button" onclick="gotoSub()">NONE</button>
+      `);
+  }
+
+  function gotoSub(){
+    $("#game-box").html("");
+    $("#game-box").load("pages/subpoints.html");
+  }
+</script>

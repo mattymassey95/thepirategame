@@ -1,0 +1,51 @@
+<div class="">
+  <h1><u>Choose Next Square</u></h1>
+  <p>You can choose the next square picked</p>
+  <table id="mini-grid">
+    <tr>
+      <th></th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th>
+    </tr>
+    <tr>
+      <th>1</th><td class="mini-cell" id="mA1"></td><td class="mini-cell" id="mB1"></td>
+      <td class="mini-cell" id="mC1"></td><td class="mini-cell" id="mD1"></td><td class="mini-cell" id="mE1">
+      </td><td class="mini-cell" id="mF1"></td><td class="mini-cell" id="mG1"></td>
+    </tr>
+    <tr>
+      <th>2</th><td class="mini-cell" id="mA2"></td><td class="mini-cell" id="mB2"></td>
+      <td class="mini-cell" id="mC2"></td><td class="mini-cell" id="mD2"></td><td class="mini-cell" id="mE2">
+      </td><td class="mini-cell" id="mF2"></td><td class="mini-cell" id="mG2"></td>
+    </tr>
+    <tr>
+      <th>3</th><td class="mini-cell" id="mA3"></td><td class="mini-cell" id="mB3"></td>
+      <td class="mini-cell" id="mC3"></td><td class="mini-cell" id="mD3"></td><td class="mini-cell" id="mE3">
+      </td><td class="mini-cell" id="mF3"></td><td class="mini-cell" id="mG3"></td>
+    </tr>
+    <tr>
+      <th>4</th><td class="mini-cell" id="mA4"></td><td class="mini-cell" id="mB4"></td>
+      <td class="mini-cell" id="mC4"></td><td class="mini-cell" id="mD4"></td><td class="mini-cell" id="mE4">
+      </td><td class="mini-cell" id="mF4"></td><td class="mini-cell" id="mG4"></td>
+    </tr>
+    <tr>
+      <th>5</th><td class="mini-cell" id="mA5"></td><td class="mini-cell" id="mB5"></td>
+      <td class="mini-cell" id="mC5"></td><td class="mini-cell" id="mD5"></td><td class="mini-cell" id="mE5">
+      </td><td class="mini-cell" id="mF5"></td><td class="mini-cell" id="mG5"></td>
+    </tr>
+    <tr>
+      <th>6</th><td class="mini-cell" id="mA6"></td><td class="mini-cell" id="mB6"></td>
+      <td class="mini-cell" id="mC6"></td><td class="mini-cell" id="mD6"></td><td class="mini-cell" id="mE6">
+      </td><td class="mini-cell" id="mF6"></td><td class="mini-cell" id="mG6"></td>
+    </tr>
+    <tr>
+      <th>7</th><td class="mini-cell" id="mA7"></td><td class="mini-cell" id="mB7"></td>
+      <td class="mini-cell" id="mC7"></td><td class="mini-cell" id="mD7"></td><td class="mini-cell" id="mE7">
+      </td><td class="mini-cell" id="mF7"></td><td class="mini-cell" id="mG7"></td>
+    </tr>
+  </table>
+  <button type="button" name="button" id="close-btn">Close</button>
+</div>
+<script type="text/javascript">
+  var currCellList = JSON.parse(sessionStorage.getItem("cellList"));
+  currCellList.forEach(function(item, index){
+    $("#m" + item.slice(-2)).addClass("selected");
+  })
+</script>

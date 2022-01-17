@@ -1,0 +1,14 @@
+<div class="top-pad50">
+  <h1><u>Swap</u></h1>
+  <p>You can swap scores with someone else</p>
+  <p>Your current score is <span id="curr-score"></span></p>
+  <p id='error-msg'></p>
+  <label>Your new score is</label>
+  <input id='input-box' type='number' min='100' max='1000000' step='100' value='0'>
+  <div><button type='button' name='button' onclick='addPoints(3)'>CONFRIM</button></div>
+  <button type="button" name="button" id="close-btn">Close</button>
+</div>
+<script type="text/javascript">
+  var currScore = JSON.parse(sessionStorage.getItem("scoreTotal"));
+  $("#curr-score").html(currScore);
+</script>

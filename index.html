@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>The Pirate Game</title>
+  <link rel="stylesheet" type="text/css" href="CSS/resetstyle.css">
+	<link rel="stylesheet" type="text/css" href="CSS/stylesheet.css?v=1">
+  <link rel="apple-touch-icon" sizes="180x180" href="./IMG/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./IMG/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./IMG/favicon-16x16.png">
+  <link rel="manifest" href="./IMG/site.webmanifest">
+  <link rel="mask-icon" href="./IMG/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript" src="./JS/setup.js"></script>
+  <script type="text/javascript" src="./JS/function.js"></script>
+  <script type="text/javascript" src="./JS/math.js"></script>
+</head>
+<body>
+  <div class="main-container">
+    <div class="full-container">
+      <div class="center-container">
+        <h1><u>The Pirate Game</u></h1>
+        <table id="game-grid">
+          <tr>
+            <th></th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th>
+          </tr>
+          <tr>
+            <th>1</th><td class="cell" id="A1"></td><td class="cell" id="B1"></td>
+            <td class="cell" id="C1"></td><td class="cell" id="D1"></td><td class="cell" id="E1">
+            </td><td class="cell" id="F1"></td><td class="cell" id="G1"></td>
+          </tr>
+          <tr>
+            <th>2</th><td class="cell" id="A2"></td><td class="cell" id="B2"></td>
+            <td class="cell" id="C2"></td><td class="cell" id="D2"></td><td class="cell" id="E2">
+            </td><td class="cell" id="F2"></td><td class="cell" id="G2"></td>
+          </tr>
+          <tr>
+            <th>3</th><td class="cell" id="A3"></td><td class="cell" id="B3"></td>
+            <td class="cell" id="C3"></td><td class="cell" id="D3"></td><td class="cell" id="E3">
+            </td><td class="cell" id="F3"></td><td class="cell" id="G3"></td>
+          </tr>
+          <tr>
+            <th>4</th><td class="cell" id="A4"></td><td class="cell" id="B4"></td>
+            <td class="cell" id="C4"></td><td class="cell" id="D4"></td><td class="cell" id="E4">
+            </td><td class="cell" id="F4"></td><td class="cell" id="G4"></td>
+          </tr>
+          <tr>
+            <th>5</th><td class="cell" id="A5"></td><td class="cell" id="B5"></td>
+            <td class="cell" id="C5"></td><td class="cell" id="D5"></td><td class="cell" id="E5">
+            </td><td class="cell" id="F5"></td><td class="cell" id="G5"></td>
+          </tr>
+          <tr>
+            <th>6</th><td class="cell" id="A6"></td><td class="cell" id="B6"></td>
+            <td class="cell" id="C6"></td><td class="cell" id="D6"></td><td class="cell" id="E6">
+            </td><td class="cell" id="F6"></td><td class="cell" id="G6"></td>
+          </tr>
+          <tr>
+            <th>7</th><td class="cell" id="A7"></td><td class="cell" id="B7"></td>
+            <td class="cell" id="C7"></td><td class="cell" id="D7"></td><td class="cell" id="E7">
+            </td><td class="cell" id="F7"></td><td class="cell" id="G7"></td>
+          </tr>
+        </table>
+        <div id="game-box"></div>
+        <div id="btn-box" class="flexContainerRow">
+          <span class="button" id="attack-btn">ATTACKED</span>
+          <span class="button" id="gift-btn">GIFT</span>
+        </div>
+      </div><!--.center-container-->
+    </div><!--.full-cntainer-->
+  </div><!--.main-container-->
+  <div id="left-nav">&gt;</div>
+  <div class="left-container">
+
+  </div><!--.left-container-->
+  <div id="right-nav">&lt;</div>
+  <div class="right-container">
+    <div class="top-panel">
+      <h1><u>Game Controls</u></h1>
+      <div id="start-message" class="flexContainerRow">
+        <span class="button" id="blank-btn">Blank Grid</span>
+        <span class="button" id="new-btn">New Grid</span>
+      </div>
+      <div id="game-ctrl" class="flexContainerRow">
+        <span class="button" id="undo-btn">Undo</span>
+        <span class="button" id="restart-btn">Restart</span>
+      </div>
+    </div>
+  </div><!--.right-container-->
+      <div class="flexContainer">
+        <div id="right-grid">
+          <div class="top-panel">
+            <h1><u>Game Controls</u></h1>
+            <div id="start-message" class="flexContainerRow">
+              <span class="button" id="blank-btn">Blank Grid</span>
+              <span class="button" id="new-btn">New Grid</span>
+            </div>
+            <div id="game-ctrl" class="flexContainerRow">
+              <span class="button" id="undo-btn">Undo</span>
+              <span class="button" id="restart-btn">Restart</span>
+            </div>
+          </div>
+        </div>
+        <div class="flexContainerCol">
+          <div class="right-panel">
+            <h1 class="toggle-btn"><u>Game Stats</u></h1>
+            <div class="blank-hide hide">
+              <table id="table-grid">
+                <tr>
+                  <td><span id="score-total">Score : 0</span></td>
+                  <td><span id="bank-total">Bank : 0</span></td>
+                  <td><span id="game-total">Total : 0</span></td>
+                </tr>
+              </table>
+              <div class="break"></div>
+            </div>
+            <p>Cell History</p>
+            <div class="scroll-pane">
+              <div id="game-history"></div>
+            </div>
+            <div class="blank-hide hide">
+              <div class="break"></div>
+              <p>Score History</p>
+              <div class="scroll-pane">
+                <div id="select-history"></div>
+              </div>
+            </div>
+          </div>
+          <div class="right-panel">
+            <h1 class="toggle-btn"><u>Instructions</u></h1>
+            <ol class="list-container">
+              <li>Start by selecting a cell</li>
+              <li>Everyone playing crosses off that cell</li>
+              <li>If the cell has number:</li>
+              <ul>
+                <li>Add the number to your total</li>
+              </ul>
+              <li>If the cell has an object:</li>
+              <ul>
+                <li>Raise your hand to use these objects<br>&#9972; &#128473; &#127873; &#9760; &#128472; &#9757;</li>
+                <li>These can be done immediately without raising your hand<br>&#128163; X2 &#127974;</li>
+                <li>These can be saved until they are needed<br>&#128737; &#128269;</li>
+              </ul>
+            </ol>
+          </div>
+          <div class="right-panel">
+            <h1 class="toggle-btn"><u>Items</u></h1>
+            <table id="item-list">
+              <tr><td>&#9972;</td><td>Steal someone's points</td><td></td></tr>
+              <tr><td>&#128473;</td><td>Kill someone</td><td></td></tr>
+              <tr><td>&#127873;</td><td>Give someone 1000 points</td><td></td></tr>
+              <tr><td>&#9760;</td><td>Wipe out a rows scores</td><td></td></tr>
+              <tr><td>&#128472;</td><td>Swap scores</td><td></td></tr>
+              <tr><td>&#9757;</td><td>Choose next square</td><td></td></tr>
+              <tr><td>&#128737;</td><td>Block attack</td><td></td></tr>
+              <tr><td>&#128269;</td><td>Reflect attack</td><td></td></tr>
+              <tr><td>&#128163;</td><td>You go to zero</td><td></td></tr>
+              <tr><td>X2</td><td>Double your score</td><td></td></tr>
+              <tr><td>&#127974;</td><td>Bank your score</td><td></td></tr>
+            </table>
+          </div>
+          <div class="bottom-panel">
+            <!--
+            <iframe width="100" height="80" src="https://www.youtube.com/embed/27mB8verLK8?controls=0&autoplay=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            -->
+            <p>Pirate's of the Caribbean Theme Song</p>
+            <div class="break"></div>
+            <p class="ref-text">The Pirate Game<br>
+              Website created by M. Massey.<br>
+              <!--
+              The original Pirate Game can be found on <a href="https://www.tes.com/teaching-resource/the-pirate-game-end-of-term-activity-6258063">TES</a>.<br>
+              Game sheets can be found on <a href="http://www.mrbartonmaths.com/blog/pirate-game-grid-generator-tes-maths-resource-of-the-week/">Mr. Barton Maths</a>.
+              -->
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <footer id="mainFooter">
+  	<p class="copyright">Copyright &copy; 2020 -  <script>document.write(new Date().getFullYear())</script>, M. Massey.</p>
+  </footer>
+</html>
