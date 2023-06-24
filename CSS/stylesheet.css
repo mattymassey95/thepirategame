@@ -1,0 +1,131 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #FFF;
+  color: #000;
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  margin: 0;
+  cursor: context-menu;
+  overflow: hidden;
+}
+
+/*----- Layout -----*/
+
+.main-container{
+  width: calc(100% - 40px);
+  height: calc(100% - 40px);
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-container .flex-top{
+  flex: 0 0;
+}
+
+.main-container .flex-middle{
+  flex: 1 1;
+}
+
+.main-container  .flex-bottom{
+  flex: 0 0;
+}
+
+/*----- Game Grid -----*/
+
+.table-wrapper {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+
+.table-wrapper th, .table-wrapper td {
+  padding: 10px;
+  border: 1px solid black;
+}
+
+#game-grid {
+  margin: auto;
+  border-collapse: collapse;
+  font-size: 1em;
+}
+
+#game-grid table, #game-grid td, #game-grid th {border: 1px solid black;}
+
+#game-grid td, #game-grid th{
+  width: 12.5%;
+  height: 12.5%;
+  vertical-align: middle;
+  cursor: context-menu;
+}
+
+#game-grid td{cursor: pointer;}
+
+#game-grid td.selected{
+  cursor: not-allowed;
+  color: #FFFFFF;
+  background-color: #A0A0A0;
+}
+
+#game-grid td.bold{
+  cursor: not-allowed;
+  color: #FFFFFF;
+  background-color: #636363;
+}
+
+/*----- Bottom Details -----*/
+
+.flexContainerRow{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: stretch;
+}
+
+button{
+  cursor: pointer;
+  margin: 10px;
+}
+
+/*----- Scrollbar -----*/
+
+::-webkit-scrollbar-track{
+	border-radius: 10px;
+	background-color: var(--scroll-background);
+}
+
+::-webkit-scrollbar{
+	width: 10px;
+  height: 10px;
+	background-color: #FFFFFF;
+}
+
+::-webkit-scrollbar-thumb{
+	border-radius: 10px;
+	background-color: #C0C0C0;
+}
+
+::-webkit-scrollbar-thumb:vertical:hover {
+    background-color: #808080;
+}
+
+::-webkit-scrollbar-thumb:horizontal:hover {
+    background-color: #808080;
+}
+
+/*----- Footer -----*/
+
+#mainFooter .copyright{
+	position: fixed;
+	font-size: 10px;
+	bottom: 0px;
+	left: 20px;
+  margin: 5px;
+}
